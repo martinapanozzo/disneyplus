@@ -108,17 +108,16 @@
   </h1>
 
   
-                   
   <section>
     <div class="container text-center my-3">
         <div class="row mx-auto my-auto justify-content-center">
-            <div id="recipeCarousel" class="carousel slide2" data-bs-ride="carousel">
+            <div id="myCarousel2" class="carousel slide2" data-bs-ride="carousel2">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-img">
-                                    <img src="imagenes/scale-3.jpeg" class="img-fluid">
+                                    <img src="imagenes/scale-4.jpeg" class="img-fluid">
                                 </div>
                                 <div class="card-img-overlay"></div>
                             </div>
@@ -128,7 +127,7 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-img">
-                                    <img src="imagenes/moana.jpeg" class="img-fluid">
+                                    <img src="imagenes/soul.jpeg" class="img-fluid">
                                 </div>
                                 <div class="card-img-overlay"></div>
                             </div>
@@ -138,7 +137,7 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-img">
-                                    <img src="imagenes/red.jpeg" class="img-fluid">
+                                    <img src="imagenes/scale.jpeg" class="img-fluid">
                                 </div>
                                 <div class="card-img-overlay"></div>
                             </div>
@@ -148,7 +147,7 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-img">
-                                    <img src="imagenes/coco.jpg" class="img-fluid">
+                                    <img src="imagenes/scale-7.jpeg" class="img-fluid">
                                 </div>
                                 <div class="card-img-overlay"></div>
                             </div>
@@ -158,7 +157,7 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-img">
-                                    <img src="imagenes/Mickey Mouse Funhouse Estreno.jpg" class="img-fluid">
+                                    <img src="imagenes/scale-6.jpeg" class="img-fluid">
                                 </div>
                                 <div class="card-img-overlay"></div>
                             </div>
@@ -166,26 +165,27 @@
                     </div>
                     <div class="carousel-item">
                         <div class="col-md-3">
-                            <div class="card1">
+                            <div class="card">
                                 <div class="card-img">
-                                    <img src="imagenes/scale-5.jpeg" class="img-fluid">
+                                    <img src="imagenes/elemntal.jpeg" class="img-fluid">
                                 </div>
                                 <div class="card-img-overlay"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                <a class="carousel-control-prev bg-transparent w-aut" href="#myCarousel2" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 </a>
-                <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                <a class="carousel-control-next bg-transparent w-aut" href="#myCarousel2" role="button" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 </a>
             </div>
         </div>
     </div>
+                
           
-    </section>             
+    </section>        
   
                               
 
@@ -290,6 +290,25 @@
      })
            
      </script>
+
+<script>
+    let item = document.querySelectorAll('.carousel2 .carousel-item')
+   
+   items.forEach((el) => {
+       const minPerSlide = 4
+       let next = el.nextElementSibling
+       for (var i=1; i<minPerSlide; i++) {
+           if (!next) {
+               // wrap carousel by using first child
+             next = items[0]
+           }
+           let cloneChild = next.cloneNode(true)
+           el.appendChild(cloneChild.children[0])
+           next = next.nextElementSibling
+       }
+   })
+         
+   </script>
 
 
 
